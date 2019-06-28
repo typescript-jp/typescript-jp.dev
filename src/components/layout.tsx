@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "styled-components"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { rhythm, scale } from "../utils/typography"
 
@@ -10,9 +9,10 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-class Layout extends React.Component {
+class Layout extends React.Component<any> {
   render() {
     const { location, title, children } = this.props
+    // @ts-ignore
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
@@ -64,7 +64,6 @@ class Layout extends React.Component {
         <>
           <GlobalStyle />
           <div
-            className={this.props.className}
             style={{
               marginLeft: `auto`,
               marginRight: `auto`,
