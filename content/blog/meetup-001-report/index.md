@@ -12,7 +12,7 @@ The meetup was very exciting and over 100 TypeScript users joined the meetup!
 
 This is an report of the meetup. If you interested in the state of the meetup, you can search [#tsjp on Twitter](https://twitter.com/search?q=%23tsjp) (almost all tweets are Japanese.)
 
-I'll let you know about TypeScript Meetup Japan and introduce the simple summary of each talks.  
+I'll let you know about TypeScript Meetup Japan and introduce the simple summary of each talk.  
 
 ## What is TypeScript Meetup and TypeScript Meetup Japan?
 
