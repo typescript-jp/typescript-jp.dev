@@ -20,7 +20,7 @@ In Tokyo, Japan, there are a lot of meetups about various JavaScript topics. For
 
 But no meetup focused on TypeScript topics in Tokyo.
 This caused 3 problems.
-- Someone who has TypeScript knowladge hesitate to talk about TypeScript specific topic in JavaScript meetup.
+- Someone who has TypeScript knowledge hesitate to talk about TypeScript specific topic in JavaScript meetup.
 - There are few guide to dive into depper TypeScript world from the beginners.
 - There are few case studies correspond to the project's size and org that meetup attendees want to know.
 
@@ -35,7 +35,7 @@ It's lucky that we held the first meetup at Microsoft, the company invented the 
 - Speaker: Shingo Inouse aka [Leko](https://twitter.com/L_e_k_o)
 - slide: TBD
 
-The organizer leko talk about why TypeScript meetup held and the purpuse of TypeScript Meetup Japan.
+The organizer leko talked about why TypeScript meetup is held and the purpose of TypeScript Meetup Japan.
 Talk summery is almost the same as [What is TypeScript Meetup ](link to the above section).
 
 
@@ -78,7 +78,7 @@ Why people write type-puzzle? He described 2 main reason. One is to be aware of 
 He devided type definitions good and bad. Good type definition is good practices like `typeof` operator or the combination of `as const` and ReturnType. Bad one is anti patterns like too strict type by `as`.
 He also showed a little difficult but useful types using Union + Mapped type.
 
-At last, he told about his thought to remove barriars of types by this talk. 
+At last, he told about his thought to remove barriers of types by this talk. 
 
 If more people became familiar with types even commit DefinitelyTyped or repository's type definition, TypeScript will get more useful and the community will become more active.
 
@@ -87,7 +87,7 @@ If more people became familiar with types even commit DefinitelyTyped or reposit
 - Slide: https://docs.google.com/presentation/d/e/2PACX-1vQck4DKc3GBrfDU_LJYRwuBAaRBlFTgJD2_k523Ximoi5juNRIX6TrjRF5zR4A6xQ6czlBLudgu4qHO/pub?slide=id.p
 
 [Jessidhia] works at pixiv Inc. and she contributes to Babel, DefinitelyTyped and styled-components.
-She talked about about the long effort of modernizing pixiv with TypeScript.
+She talked about the long effort of modernizing pixiv with TypeScript.
 
 [pixiv](https://www.pixiv.net/) is one of the biggest SNS in the world that focused on illustrations and mangas.
 pixiv also has over 10 years history since the service started at 2007.
@@ -145,5 +145,5 @@ There were only about an hour, after party was very exciting.
 TypeScript meetup #2 will be held at FiNC Technologies on July 10th.
 Next speakers are [@mizchi](https://twitter.com/mizchi), [@__gfx__](https://twitter.com/__gfx__), [@takepepe](https://twitter.com/takepepe). If you are interested in, using or want to talk about TypeScript, you are welcome!
 
-At last, we thanks to the Microsoft Japan's staff who helped us, all the speakers and all attendees. Of cource also thank for the awesome Language TypeScript and TypeScript core team members!
+At last, we thanks to the Microsoft Japan's staffs who helped us, all the speakers and all attendees. Of course also thank for the awesome Language TypeScript and TypeScript core team members!
 See you again at the next meetup.👋 
