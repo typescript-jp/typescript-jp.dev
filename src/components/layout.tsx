@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
 class Layout extends React.Component<any> {
   render() {
     const { location, title, children } = this.props
-    // @ts-ignore
     const rootPath = `${__PATH_PREFIX__}/`
     let header
 
