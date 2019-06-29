@@ -1,8 +1,14 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import styled from "styled-components"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { ArticleExcerpt } from "../components/ArticleExcerpt"
+import { Meetup } from "../components/Meetup"
+
+const SubHeading = styled.h2`
+  color: ${({ theme }) => theme.colors.text};
+`
 
 class BlogIndex extends React.Component<any> {
   render() {
@@ -13,29 +19,29 @@ class BlogIndex extends React.Component<any> {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          title="Top"
+          keywords={[`typescript`, `meetup`, `community`, `connpass`]}
         />
+        <SubHeading>Upcoming events</SubHeading>
+        {/* FIXME: ここハードコードせずにconnpassと連動させたい... */}
+        <Meetup
+          url="https://typescript-jp.connpass.com/event/135033/"
+          title="TypeScript Meetup #2"
+          venue="株式会社 FiNC Technologies"
+          heldOn={new Date(2019, 6, 10, 19, 30)}
+        />
+
+        <SubHeading>Articles</SubHeading>
         {posts.map(({ node }: { node: any }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </div>
+            <ArticleExcerpt
+              key={node.fields.slug}
+              title={title}
+              slug={node.fields.slug}
+              publishedAt={new Date(node.frontmatter.date)}
+              body={node.frontmatter.description || node.excerpt}
+            />
           )
         })}
       </Layout>
