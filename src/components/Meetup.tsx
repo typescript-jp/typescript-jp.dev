@@ -22,15 +22,18 @@ const Venue = styled.span`
 
 export function Meetup(props: Props) {
   const { title, url, venue, heldOn } = props
-  const formatter = new Intl.DateTimeFormat(navigator.language, {
-    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    weekday: "short",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  })
+  const formatter = new Intl.DateTimeFormat(
+    typeof navigator !== "undefined" ? navigator.language : "en",
+    {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      weekday: "short",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }
+  )
 
   return (
     <div>

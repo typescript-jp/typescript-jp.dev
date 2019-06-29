@@ -25,7 +25,9 @@ const Text = styled.p`
 
 export function ArticleExcerpt(props: Props) {
   const { title, slug, publishedAt, body } = props
-  const formatter = new Intl.DateTimeFormat(navigator.language)
+  const formatter = new Intl.DateTimeFormat(
+    typeof navigator !== "undefined" ? navigator.language : "en"
+  )
   return (
     <div>
       <Title

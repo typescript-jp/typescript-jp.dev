@@ -24,7 +24,9 @@ const Text = styled.p`
 
 export function Article(props: Props) {
   const { title, publishedAt, body } = props
-  const formatter = new Intl.DateTimeFormat(navigator.language)
+  const formatter = new Intl.DateTimeFormat(
+    typeof navigator !== "undefined" ? navigator.language : "en"
+  )
   return (
     <div>
       <Title
