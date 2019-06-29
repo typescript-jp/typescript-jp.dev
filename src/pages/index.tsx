@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import { ArticleExcerpt } from "../components/ArticleExcerpt"
 import { Meetup } from "../components/Meetup"
 
+type FIXME_Event = any
+
 const SubHeading = styled.h2`
   color: ${({ theme }) => theme.colors.text};
 `
@@ -14,6 +16,10 @@ class BlogIndex extends React.Component<any> {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
+    const events = data.allConnpassEvents.edges as FIXME_Event[]
+    const upcommingEvents = events.filter(
+      ({ node }) => new Date(node.started_at) > new Date()
+    )
     const posts = data.allMarkdownRemark.edges
 
     return (
@@ -23,13 +29,14 @@ class BlogIndex extends React.Component<any> {
           keywords={[`typescript`, `meetup`, `community`, `connpass`]}
         />
         <SubHeading>Upcoming events</SubHeading>
-        {/* FIXME: ここハードコードせずにconnpassと連動させたい... */}
-        <Meetup
-          url="https://typescript-jp.connpass.com/event/135033/"
-          title="TypeScript Meetup #2"
-          venue="株式会社 FiNC Technologies"
-          heldOn={new Date(2019, 6, 10, 19, 30)}
-        />
+        {upcommingEvents.map(({ node: event }) => (
+          <Meetup
+            url={event.event_url}
+            title={event.title}
+            venue={event.place}
+            heldOn={new Date(event.started_at)}
+          />
+        ))}
 
         <SubHeading>Articles</SubHeading>
         {posts.map(({ node }: { node: any }) => {
@@ -70,6 +77,18 @@ export const pageQuery = graphql`
             title
             description
           }
+        }
+      }
+    }
+    # https://www.gatsbyjs.org/packages/gatsby-source-apiserver/?=gatsby-source-api#dummy-node
+    allConnpassEvents(filter: { id: { ne: "dummy" } }) {
+      edges {
+        node {
+          id
+          title
+          event_url
+          started_at
+          place
         }
       }
     }

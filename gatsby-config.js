@@ -24,6 +24,21 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-apiserver",
+      options: {
+        // https://connpass.com/about/api/
+        typePrefix: "connpass__",
+        method: "get",
+        url: `https://connpass.com/api/v1/event/`,
+        name: `events`,
+        entityLevel: `events`,
+        params: {
+          series_id: 7781
+        },
+        verboseOutput: true, // For debugging purposes
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
