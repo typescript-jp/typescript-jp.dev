@@ -1,15 +1,26 @@
 import React from "react"
 import styled from "styled-components"
+import media from "styled-media-query"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { ArticleExcerpt } from "../components/ArticleExcerpt"
-import { Meetup } from "../components/Meetup"
+import ArticleExcerpts from "../components/ArticleExcerpts"
+import Meetups from "../components/Meetups"
+import { rhythm } from "../utils/typography"
 
 type FIXME_Event = any
 
 const SubHeading = styled.h2`
+  margin-bottom: ${rhythm(1.2)};
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  font-size: ${rhythm(1.2)};
+  line-height: 1.2;
   color: ${({ theme }) => theme.colors.text};
+  ${media.lessThan("small")`
+    font-size: ${rhythm(0.8)};
+    margin-bottom: ${rhythm(0.8)};
+  `}
 `
 
 class BlogIndex extends React.Component<any> {
@@ -23,34 +34,15 @@ class BlogIndex extends React.Component<any> {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout title={siteTitle}>
         <SEO
           title="Top"
           keywords={[`typescript`, `meetup`, `community`, `connpass`]}
         />
         <SubHeading>Upcoming events</SubHeading>
-        {upcommingEvents.map(({ node: event }) => (
-          <Meetup
-            url={event.event_url}
-            title={event.title}
-            venue={event.place}
-            heldOn={new Date(event.started_at)}
-          />
-        ))}
-
+        <Meetups upcommingEvents={upcommingEvents} />
         <SubHeading>Articles</SubHeading>
-        {posts.map(({ node }: { node: any }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <ArticleExcerpt
-              key={node.fields.slug}
-              title={title}
-              slug={node.fields.slug}
-              publishedAt={new Date(node.frontmatter.date)}
-              body={node.frontmatter.description || node.excerpt}
-            />
-          )
-        })}
+        <ArticleExcerpts posts={posts} />
       </Layout>
     )
   }

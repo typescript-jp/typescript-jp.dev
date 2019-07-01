@@ -11,7 +11,7 @@ class BlogPostTemplate extends React.Component<any> {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -21,7 +21,6 @@ class BlogPostTemplate extends React.Component<any> {
           publishedAt={new Date(post.frontmatter.date)}
           body={post.html}
         />
-
         <ul
           style={{
             display: `flex`,
