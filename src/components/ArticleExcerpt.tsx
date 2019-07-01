@@ -1,55 +1,48 @@
 import React from "react"
-import styled from "styled-components"
 import { Link } from "gatsby"
-import { rhythm, scale } from "../utils/typography"
+import styled from "styled-components"
+import media from "styled-media-query"
+import { rhythm } from "../utils/typography"
+import { DateLabel } from "./DateLabel"
 
 type Props = {
+  className?: string
   title: string
   slug: string
   publishedAt: Date
   body: string
 }
 
-const Title = styled.h3``
+export const ArticleExcerpt: React.FC<Props> = props => (
+  <Link to={props.slug} className={props.className}>
+    <p className="date">{DateLabel(props.publishedAt)}</p>
+    <p className="title">{props.title}</p>
+    <p className="body">{props.body}</p>
+  </Link>
+)
 
-const PublishedDate = styled.time`
-  display: block;
+const StyledArticleExcerpt = styled(ArticleExcerpt)`
+  padding: ${rhythm(1)};
+  text-decoration: none;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transition-duration: 0.2s;
+  &:hover {
+    text-decoration: none;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  ${media.lessThan("small")`
+    padding: ${rhythm(0.5)};
+  `}
+  > .date {
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
+  > .title {
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+  > .body {
+    font-size: 0.8em;
+  }
 `
-
-// https://murashun.jp/blog/20170716-01.html
-const Text = styled.p`
-  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
-    Meiryo, sans-serif;
-  color: ${({ theme }) => theme.colors.text};
-`
-
-export function ArticleExcerpt(props: Props) {
-  const { title, slug, publishedAt, body } = props
-  const formatter = new Intl.DateTimeFormat(
-    typeof navigator !== "undefined" ? navigator.language : "en"
-  )
-  return (
-    <div>
-      <Title
-        style={{
-          marginBottom: rhythm(1 / 4),
-        }}
-      >
-        <Link to={slug}>{title}</Link>
-      </Title>
-      <PublishedDate
-        dateTime={publishedAt.toISOString()}
-        style={{
-          ...scale(-1 / 5),
-        }}
-      >
-        {formatter.format(publishedAt)}
-      </PublishedDate>
-      <Text
-        dangerouslySetInnerHTML={{
-          __html: body,
-        }}
-      />
-    </div>
-  )
-}
+export default StyledArticleExcerpt

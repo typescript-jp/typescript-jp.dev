@@ -1,11 +1,17 @@
-import React from "react"
 import styled from "styled-components"
+import media from "styled-media-query"
 import { rhythm } from "../utils/typography"
 
 export const Page = styled.div`
   background-color: ${({ theme }) => theme.colors.base};
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${rhythm(36)};
-  padding: ${rhythm(1)} ${rhythm(1.6)} ${rhythm(1)};
+  margin: 0 auto;
+  max-width: ${rhythm(38)};
+  ${media.lessThan("medium")`
+    margin-top: 20%;
+    padding: ${rhythm(1)};
+  `}
+  ${media.greaterThan("medium")`
+    margin-top: 16%;
+    padding: ${rhythm(1.6)};
+  `}
 `

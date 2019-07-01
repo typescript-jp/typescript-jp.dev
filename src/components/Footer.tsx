@@ -6,17 +6,19 @@ import { Copyright } from "./Copyright"
 import { ExternalLink } from "./ExternalLink"
 
 const Container = styled.footer`
-  padding-top: ${rhythm(1)};
-  border-top: 1px solid ${({ theme }) => theme.colors.divider};
+  padding: ${rhythm(1)};
 `
 
 const LinksContainer = styled.footer`
   display: flex;
   justify-content: center;
+  a {
+    color: ${({ theme }) => theme.colors.text};
+  }
 `
 
 const LinkDivider = styled.span`
-  color: ${({ theme }) => theme.colors.divider};
+  color: ${({ theme }) => theme.colors.text};
   margin: 0 ${rhythm(0.2)};
 `
 

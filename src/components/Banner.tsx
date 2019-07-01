@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import media from "styled-media-query"
 import { Link as _Link } from "gatsby"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import { Logo } from "./Logo"
 
 type Props = {
@@ -21,8 +22,11 @@ const Link = styled(_Link)`
   margin-bottom: ${rhythm(1)};
 `
 const Title = styled.h1`
-  color: ${({ theme }) => theme.colors.text};
   margin: 0;
+  color: ${({ theme }) => theme.colors.text};
+  ${media.lessThan("small")`
+    font-size: ${rhythm(1)};
+  `}
 `
 
 export function Banner(props: Props) {
@@ -32,13 +36,7 @@ export function Banner(props: Props) {
       <LogoContainer>
         <Logo size={48} />
       </LogoContainer>
-      <Title
-        style={{
-          ...scale(1),
-        }}
-      >
-        {title}
-      </Title>
+      <Title>{title}</Title>
     </Link>
   )
 }

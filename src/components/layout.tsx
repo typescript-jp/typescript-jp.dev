@@ -1,36 +1,40 @@
 import React from "react"
-import { Link } from "gatsby"
-import { createGlobalStyle, ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
+import { GlobalStyle } from "./GlobalStyle"
 import { theme } from "../theme"
+import { rhythm } from "../utils/typography"
 import { Page } from "./Page"
 import { Banner } from "./Banner"
 import { Footer } from "./Footer"
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    background: ${({ theme }) => theme.colors.primary};
+type Props = {
+  className?: string
+  title: string
+}
+const Layout: React.FC<Props> = props => (
+  <ThemeProvider theme={theme}>
+    <div className={props.className}>
+      <GlobalStyle />
+      <header>
+        <Banner title={props.title} />
+      </header>
+      <Page>
+        <main>{props.children}</main>
+      </Page>
+      <Footer />
+    </div>
+  </ThemeProvider>
+)
+
+const StyledLayout = styled(Layout)`
+  > header {
+    padding: 16px 0;
+    background-color: #fff;
+    > * {
+      margin: 0 auto;
+      max-width: ${rhythm(36)};
+    }
   }
 `
 
-class Layout extends React.Component<any> {
-  render() {
-    const { title, children } = this.props
-
-    return (
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyle />
-          <Page>
-            <header>
-              <Banner title={title} />
-            </header>
-            <main>{children}</main>
-            <Footer />
-          </Page>
-        </>
-      </ThemeProvider>
-    )
-  }
-}
-
-export default Layout
+export default StyledLayout
