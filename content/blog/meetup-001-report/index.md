@@ -16,7 +16,7 @@ I'll let you know about TypeScript Meetup Japan and introduce the simple summary
 
 ## What is TypeScript Meetup and TypeScript Meetup Japan?
 
-In Tokyo, Japan, there are a lot of meetups about various JavaScript topics. For example [Gontanda.js](https://gotanda.js.org/), [Meguro.es](https://meguro.es/), [Angular Japan / Tokyo](https://www.meetup.com/ja-JP/ng-japan-tokyo/), [ReactJS Tokyo](https://www.meetup.com/ja-JP/ReactJS-Tokyo/), [Vue.js Japan User Group](https://vuejs-meetup.connpass.com/) and [We Are JavaScripters!](https://wajs.connpass.com/). The examples are only part of meetups, more and more meetups are held by its community.
+In Tokyo, Japan, there are a lot of meetups about various JavaScript topics. For example focused on each popular javascript library like Angular, React, Vue or held by local community like [Gotanda.js](https://gotanda.js.org/) or [Meguro.es](https://meguro.es/).
 
 But no meetup focused on TypeScript topics in Tokyo.
 This caused 3 problems.
@@ -24,23 +24,15 @@ This caused 3 problems.
 - There are few guide to dive into depper TypeScript world from the beginners.
 - There are few case studies correspond to the project's size and org that meetup attendees want to know.
 
-Mr.Leko[leko's twitter] started planning TypeScript Meetup to solve these problems from Mar 23th, 2019. We, the staffs, got together and lauched the community TypeScript Meetup Japan to prepare the place of sharing knowledge of TypeScript.
+[Mr.Leko](https://twitter.com/L_e_k_o) started planning TypeScript Meetup to solve these problems from Mar 23th, 2019. We, the staffs, got together and lauched the community TypeScript Meetup Japan to prepare the place of sharing knowledge of TypeScript.
 
 It's lucky that we held the first meetup at Microsoft, the company invented the TypeScript.
 
-
 ## Table of Contents
 
-### Opening Talk
-- Speaker: Shingo Inouse aka [Leko](https://twitter.com/L_e_k_o)
-- slide: TBD
-
-The organizer leko talked about why TypeScript meetup is held and the purpose of TypeScript Meetup Japan.
-Talk summery is almost the same as [What is TypeScript Meetup ](link to the above section).
-
-
 ### The way to get along with "type-puzzle"
-- Speaker: Shingo Inouse aka [Leko](https://twitter.com/L_e_k_o)
+
+- Speaker: [Leko](https://twitter.com/L_e_k_o)
 - Slide: https://talks.leko.jp/type-puzzle-world/#0
 
 Leko is an organizer of this meetup and Node.js collaborator.
@@ -83,6 +75,7 @@ At last, he told about his thought to remove barriers of types by this talk.
 If more people became familiar with types even commit DefinitelyTyped or repository's type definition, TypeScript will get more useful and the community will become more active.
 
 ### Moderninzing pixiv
+
 - Speaker: Jessica Franco aka [Jessidhia](https://twitter.com/jessidhia)
 - Slide: https://docs.google.com/presentation/d/e/2PACX-1vQck4DKc3GBrfDU_LJYRwuBAaRBlFTgJD2_k523Ximoi5juNRIX6TrjRF5zR4A6xQ6czlBLudgu4qHO/pub?slide=id.p
 
@@ -101,6 +94,7 @@ If you interested in modernizing the system, please see the slide for more detai
 
 
 ### Typescript Build 2019 update
+
 - Speaker: [Kenichiro Nakamura](https://twitter.com/kenakamu108)
 - Slide: https://www.slideshare.net/KenichiroNakamura/typescript-meetup-1-build-2019-update
 
@@ -114,6 +108,7 @@ His talk was easy and frinendly. The audience were often laughed at his jokes.
 This was awesome talk!
 
 ### TypeScript Server Side Anatomy
+
 - Speaker: Yosuke Kurami aka [Quramy](https://twitter.com/Quramy)
 - Slide: https://quramy.github.io/tsjp-resources/#slide=1
 
