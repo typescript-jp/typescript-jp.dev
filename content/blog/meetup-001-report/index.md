@@ -1,5 +1,5 @@
 ---
-title: TypeScript Meetup \#1 Report
+title: TypeScript Meetup #1 Report
 date: "2019-06-30T10:30:00.000+0900"
 description: "How fun the first TypeScript Meetup is."
 ---
