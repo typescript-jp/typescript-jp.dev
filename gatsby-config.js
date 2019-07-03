@@ -33,10 +33,10 @@ module.exports = {
         name: `events`,
         entityLevel: `events`,
         params: {
-          series_id: 7781
+          series_id: 7781,
         },
         verboseOutput: true, // For debugging purposes
-      }
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -90,6 +90,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
   ],
 }
