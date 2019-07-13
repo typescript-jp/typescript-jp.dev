@@ -2,6 +2,7 @@
 title: TypeScript meetup第1回を開催します！
 date: "2019-05-20T10:30:00.000+0900"
 description: ""
+author: leko
 ---
 
 TypeScript（以下 TS）は大きな注目を集めている言語の 1 つです。  
