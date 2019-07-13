@@ -8,6 +8,9 @@ module.exports = {
       twitter: `typescriptjp`,
     },
   },
+  mapping: {
+    "MarkdownRemark.frontmatter.author": `AuthorYaml`,
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,6 +24,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/assets`,
         name: `assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/mappings`,
+        name: `mappings`,
       },
     },
     {
@@ -91,5 +101,6 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
+    `gatsby-transformer-yaml`,
   ],
 }

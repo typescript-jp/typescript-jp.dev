@@ -5,6 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const authorsPage = path.resolve("./src/templates/authors.tsx")
   return graphql(
     `
       {
@@ -16,6 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                authorId
               }
               frontmatter {
                 title
@@ -48,6 +50,30 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    createPage({
+      path: `/authors/`,
+      component: authorsPage,
+    })
+
+    const authorSet = new Set()
+    result.data.allMarkdownRemark.edges.forEach(edge => {
+      if (edge.node.fields.authorId) {
+        authorSet.add(edge.node.fields.authorId)
+      }
+    })
+
+    // create author's pages inside export.createPages:
+    const authorList = Array.from(authorSet)
+    authorList.forEach(author => {
+      createPage({
+        path: `/author/${author}/`,
+        component: authorPage,
+        context: {
+          authorId: author,
+        },
+      })
+    })
+
     return null
   })
 }
@@ -61,6 +87,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+  }
+
+  if (Object.prototype.hasOwnProperty.call(node.frontmatter, "author")) {
+    createNodeField({
+      node,
+      name: "authorId",
+      value: node.frontmatter.author,
     })
   }
 }
