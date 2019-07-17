@@ -20,12 +20,10 @@ I'll summerize the table of contents.
 
 ### Sponsor session
 
-- Speakers: さわださん（TODO: Twitter）, [Quramy](https://twitter.com/Quramy) from FiNC Technologies
+- Speakers: [Nobuhiko Sawada](https://twitter.com/nobuhikosawai), [Quramy](https://twitter.com/Quramy) from FiNC Technologies
 - Slide: https://quramy.github.io/gql-ts-talk/#slide=1
 
 This meetup was sponsored by FiNC Technologies. FiNC Technologies is a startup that focuses on the combination of health care and AI. If you interested in FiNC, please see the [website](https://company.finc.com/).
-
-TODO: さわださんが喋った内容
 
 Quramy talked about GraphQL and TypeScript. First, he introduced what is GraphQL. Second, he showed 3 tips of TypeScript and GraphQL client dev.
 
@@ -56,7 +54,7 @@ He solved the problem by the combination of compiler API and Node.js. If you wan
 
 His challenge of provide type inference to anyone without bothers is to be continued to [Vue Fes Japan 2019](https://vuefes.jp/2019/).
 
-### Nondestructive TypeScript
+### Nondestructive TypeScript (非破壊TypeScript)
 
 - Speaker: Kotaro Chikuba aka [mizchi](https://twitter.com/mizchi)
 - Slide: https://gist.github.com/mizchi/9e71569f72187af749adfecea49fb38a
@@ -86,7 +84,7 @@ Next, he showed following anti-patterns.
 
 At last, he empashized on *Don't modify types and logics at the same time* again. It's very import to introducing TypeScript.
 
-### Talk battle of practical TypeScript
+### Talk battle of practical TypeScript (実践TypeScriptトークバトル)
 
 - Facilitator: Goro Fuji aka [\_\_gfx\_\_](https://twitter.com/__gfx__)
 - Talkers: takepepe, mizchi
@@ -104,7 +102,9 @@ Q: When to use `any` intentionally such as type alias of `FIXME_any`
 
 Q: How to persuade people who opposed the introduction of TypeScript because they thought JavaScript was enough.
 
-### After party
+Every question and discussion was very exciting.
+
+## After party
 
 A lot of TypeScript users talked about various topics with each other, 🍕 and 🍺.
 
