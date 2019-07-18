@@ -23,7 +23,7 @@ I'll summerize the table of contents.
 - Speakers: [Nobuhiko Sawada](https://twitter.com/nobuhikosawai), [Quramy](https://twitter.com/Quramy) from FiNC Technologies
 - Slide: https://quramy.github.io/gql-ts-talk/#slide=1
 
-This meetup was sponsored by FiNC Technologies. FiNC Technologies is a startup that focuses on the combination of health care and AI. If you interested in FiNC, please see the [website](https://company.finc.com/).
+This meetup was sponsored by [FiNC Technologies](https://company.finc.com/) and speakers talked about FiNC and technologies they used.
 
 Quramy talked about GraphQL and TypeScript. First, he introduced what is GraphQL. Second, he showed 3 tips of TypeScript and GraphQL client dev.
 
