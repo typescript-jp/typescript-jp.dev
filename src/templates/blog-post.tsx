@@ -72,8 +72,16 @@ export const pageQuery = graphql`
         description
         author {
           id
+          name
           bio
           twitter
+          avatar {
+            childImageSharp {
+              fixed(width: 50, height: 50) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       }
     }

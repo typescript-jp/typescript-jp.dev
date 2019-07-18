@@ -1,6 +1,10 @@
 - id: leko
+  name: Leko
   bio: front end compiler
   twitter: L_e_k_o
+  avatar: ../assets/sasurau4.png
 - id: sasurau4
+  name: sasurau4
   bio: Vimmer
   twitter: sasurau4
+  avatar: ../assets/sasurau4.png

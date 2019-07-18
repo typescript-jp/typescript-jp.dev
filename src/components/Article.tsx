@@ -1,12 +1,19 @@
 import React from "react"
 import { ArticlePublishedDate } from "./ArticlePublishedDate"
 import { HeadGroup, Title, Body } from "./ArticleStyle"
-import Bio from "./bio"
+import Image from "gatsby-image"
+import { rhythm } from "../utils/typography"
 
 type Author = {
   id: string
+  name: string
   bio: string
   twitter: string
+  avatar: {
+    childImageSharp: {
+      fixed: any
+    }
+  }
 }
 
 type Props = {
@@ -22,8 +29,20 @@ export const Article: React.FC<Props> = props => (
       <ArticlePublishedDate publishedAt={props.publishedAt} />
       <div>
         <Title>{props.title}</Title>
-        <p>{props.author.id}</p>
-        <Bio />
+        <Image
+          fixed={props.author.avatar.childImageSharp.fixed}
+          alt={props.author.id}
+          style={{
+            marginLeft: rhythm(1 / 2),
+            marginBottom: rhythm(1 / 1),
+            minWidth: 50,
+            borderRadius: `100%`,
+          }}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        <p>{props.author.name}</p>
       </div>
     </HeadGroup>
     <Body

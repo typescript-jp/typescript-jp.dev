@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
   const authorsPage = path.resolve("./src/templates/authors.tsx")
+  const authorPage = path.resolve("./src/templates/author.tsx")
   return graphql(
     `
       {
@@ -88,13 +89,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
-  }
-
-  if (Object.prototype.hasOwnProperty.call(node.frontmatter, "author")) {
-    createNodeField({
-      node,
-      name: "authorId",
-      value: node.frontmatter.author,
-    })
+    if (Object.prototype.hasOwnProperty.call(node.frontmatter, "author")) {
+      createNodeField({
+        node,
+        name: "authorId",
+        value: node.frontmatter.author,
+      })
+    }
   }
 }
