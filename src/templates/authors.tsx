@@ -1,14 +1,20 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import Image from "gatsby-image"
+import { rhythm } from "../utils/typography"
+import AuthorListItem from "../components/AuthorListItem"
 
 export default function AuthorsTemplates(props: any) {
-  const authorNodes = props.data.allAuthorYaml.edges.authorNodes
+  const authorNodes = props.data.allAuthorYaml.edges
   return (
-    <div>
-      {authorNodes.map((an: any, index: number) => {
-        console.log(an)
-        return <div key={`author-${author.id}`}>{author.id}</div>
-      })}
-    </div>
+    <Layout title="Authors">
+      <div>
+        {authorNodes.map((an: any, index: number) => {
+          return <AuthorListItem {...an.node} />
+        })}
+      </div>
+    </Layout>
   )
 }
 export const pageQuery = graphql`
@@ -19,6 +25,13 @@ export const pageQuery = graphql`
           id
           bio
           twitter
+          avatar {
+            childImageSharp {
+              fixed(width: 150, height: 150) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       }
     }
