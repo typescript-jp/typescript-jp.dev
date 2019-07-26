@@ -20,7 +20,7 @@ I'll summerize the table of contents.
 
 ### Sponsor session
 
-- Speakers: [Nobuhiko Sawada](https://twitter.com/nobuhikosawai), [Quramy](https://twitter.com/Quramy) from FiNC Technologies
+- Speakers: [Nobuhiko Sawai](https://twitter.com/nobuhikosawai), [Quramy](https://twitter.com/Quramy) from FiNC Technologies
 - Slide: https://quramy.github.io/gql-ts-talk/#slide=1
 
 This meetup was sponsored by [FiNC Technologies](https://company.finc.com/) and speakers talked about FiNC and technologies they used.
