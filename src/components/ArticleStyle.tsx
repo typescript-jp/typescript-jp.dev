@@ -11,6 +11,16 @@ export const HeadGroup = styled.div`
   `}
 `
 
+export const FootGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: ${rhythm(1)};
+  ${media.lessThan("small")`
+    display: block;
+  `}
+`
+
 export const PublishedDate = styled.time`
   display: block;
   padding: ${rhythm(0.6)};
