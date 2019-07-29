@@ -1,32 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import ArticleExcerpts from "../components/ArticleExcerpts"
+import AuthorListItem from "../components/AuthorListItem"
 
 export default function Author(props: any) {
-  const { id, bio, twitter } = props.data.authorYaml
-  const postNodes = props.data.allMarkedRemark.edges.postNodes
+  const author = props.data.authorYaml
+  const postNodes = props.data.allMarkdownRemark.edges
   return (
-    <div>
-      <div>
-        <h2>{id}</h2>
-        <a href={`https://twitter.com/${twitter}/`} target="_blank">
-          {`@${twitter}`}
-        </a>
-        <p>
-          <em>{bio}</em>
-        </p>
-      </div>
+    <Layout title={name}>
+      <AuthorListItem {...author} />
       <hr />
-      <p>{`Posted by ${id}: `}</p>
-      {postNodes.map((pn: any, idx: number) => {
-        const { node } = pn
-        const { post } = node
-        return (
-          <div key={post.id}>
-            <a href={post.fields.slug}>{post.frontmatter.title}</a>
-          </div>
-        )
-      })}
-    </div>
+      <h3>{`Posted by ${author.name}`}</h3>
+      <ArticleExcerpts posts={postNodes} />
+    </Layout>
   )
 }
 
@@ -35,24 +22,24 @@ export const pageQuery = graphql`
     allMarkdownRemark(filter: { fields: { authorId: { eq: $authorId } } }) {
       edges {
         node {
-          id
-          frontmatter {
-            title
-            author {
-              id
-            }
-          }
+          excerpt
           fields {
-            authorId
             slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            description
           }
         }
       }
     }
     authorYaml(id: { eq: $authorId }) {
       id
+      github
       bio
       twitter
+      name
     }
   }
 `

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
@@ -11,7 +11,14 @@ export default function AuthorsTemplates(props: any) {
     <Layout title="Authors">
       <div>
         {authorNodes.map((an: any, index: number) => {
-          return <AuthorListItem {...an.node} />
+          return (
+            <>
+              <Link to={`/author/${an.node.id}`}>
+                <AuthorListItem {...an.node} />
+              </Link>
+              <hr />
+            </>
+          )
         })}
       </div>
     </Layout>
@@ -22,16 +29,11 @@ export const pageQuery = graphql`
     allAuthorYaml {
       edges {
         node {
+          name
+          github
           id
           bio
           twitter
-          avatar {
-            childImageSharp {
-              fixed(width: 150, height: 150) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
         }
       }
     }

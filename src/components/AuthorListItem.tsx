@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Image from "gatsby-image"
 import { rhythm } from "../utils/typography"
 import { Link } from "gatsby"
 
@@ -9,11 +8,7 @@ type Author = {
   name: string
   bio: string
   twitter: string
-  avatar: {
-    childImageSharp: {
-      fixed: any
-    }
-  }
+  github: string
 }
 
 const Container = styled.div`
@@ -21,8 +16,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: medium solid ${props => props.theme.colors.divider};
-  margin-bottom: 8px;
 `
 
 const LeftContainer = styled.div`
@@ -30,26 +23,35 @@ const LeftContainer = styled.div`
 `
 const RightContainer = styled.div``
 
+const AvatarImage = styled.img`
+  width: 200px;
+  height: 200px;
+  margin: ${rhythm(1 / 2)};
+  min-width: 50;
+`
 export default function AuthorListItem(props: Author) {
-  const { id, twitter, bio, avatar } = props
+  const { id, twitter, bio, github, name } = props
+  const imageUrl = `https://github.com/${id}.png`
 
   return (
     <Container key={id}>
       <LeftContainer>
-        <Link to={`author/${id}`}>
-          <h1>{id}</h1>
-          <h3>{bio}</h3>
-        </Link>
+        <h1>{name}</h1>
+        <h3>
+          <em>{bio}</em>
+        </h3>
+        <p>
+          <a href={`https://twitter.com/${twitter}/`} target="_blank">
+            twitter
+          </a>
+          {` / `}
+          <a href={`https://github.com/${github}/`} target="_blank">
+            github
+          </a>
+        </p>
       </LeftContainer>
       <RightContainer>
-        <Image
-          fixed={avatar.childImageSharp.fixed}
-          alt={id}
-          style={{
-            margin: rhythm(1 / 2),
-            minWidth: 50,
-          }}
-        />
+        <AvatarImage src={imageUrl} />
       </RightContainer>
     </Container>
   )
