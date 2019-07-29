@@ -8,7 +8,7 @@ export default function Author(props: any) {
   const author = props.data.authorYaml
   const postNodes = props.data.allMarkdownRemark.edges
   return (
-    <Layout title={name}>
+    <Layout title={author.name}>
       <AuthorListItem {...author} />
       <hr />
       <h3>{`Posted by ${author.name}`}</h3>
