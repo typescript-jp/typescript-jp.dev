@@ -1,9 +1,12 @@
 import React from "react"
 import styled from "styled-components"
-import { rhythm } from "../utils/typography"
-import { Link } from "gatsby"
+import media from "styled-media-query"
+import { AuthorListItemArticleAvatarImage } from "./AuthorListItemArticleAvatarImage"
+import { LinkGithub } from "./LinkGithub"
+import { LinkTwitter } from "./LinkTwitter"
 
-type Author = {
+type Props = {
+  className?: string
   id: string
   name: string
   bio: string
@@ -11,49 +14,55 @@ type Author = {
   github: string
 }
 
-const Container = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+const View: React.FC<Props> = props => (
+  <div className={props.className}>
+    <div className="description">
+      <h1>{props.name}</h1>
+      <h3>
+        <em>{props.bio}</em>
+      </h3>
+      <div className="accounts">
+        <LinkGithub id={props.github} size={32} color="#ccc" />
+        <LinkTwitter id={props.twitter} size={32} color="#ccc" />
+      </div>
+    </div>
+    <div className="avator">
+      <AuthorListItemArticleAvatarImage
+        imageUrl={`https://github.com/${props.id}.png`}
+      />
+    </div>
+  </div>
+)
+
+const StyledView = styled(View)`
+  ${media.greaterThan("medium")`
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      margin-bottom: 0;
+    }
+    .description {
+      flex: 1;
+    }
+  `}
+  ${media.lessThan("medium")`
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    h1 {
+      margin: 10px;
+    }
+    .description {
+      text-align: center;
+    }
+  `}
+  .accounts > * {
+    margin: 10px;
+  }
 `
 
-const LeftContainer = styled.div`
-  flex: 1;
-`
-const RightContainer = styled.div``
-
-const AvatarImage = styled.img`
-  width: 200px;
-  height: 200px;
-  margin: ${rhythm(1 / 2)};
-  min-width: 50;
-`
-export default function AuthorListItem(props: Author) {
-  const { id, twitter, bio, github, name } = props
-  const imageUrl = `https://github.com/${id}.png`
-
-  return (
-    <Container key={id}>
-      <LeftContainer>
-        <h1>{name}</h1>
-        <h3>
-          <em>{bio}</em>
-        </h3>
-        <p>
-          <a href={`https://twitter.com/${twitter}/`} target="_blank">
-            twitter
-          </a>
-          {` / `}
-          <a href={`https://github.com/${github}/`} target="_blank">
-            github
-          </a>
-        </p>
-      </LeftContainer>
-      <RightContainer>
-        <AvatarImage src={imageUrl} />
-      </RightContainer>
-    </Container>
-  )
-}
+export default StyledView

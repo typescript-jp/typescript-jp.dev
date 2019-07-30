@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import { ArticlePublishedDate } from "./ArticlePublishedDate"
 import { HeadGroup, Title, Body, FootGroup } from "./ArticleStyle"
-import Image from "gatsby-image"
+import { ArticleAvatarImage } from "./ArticleAvatarImage"
 import { rhythm } from "../utils/typography"
 import AuthorListItem from "./AuthorListItem"
 
@@ -56,7 +56,7 @@ export const Article: React.FC<Props> = props => {
       <hr />
       <Link to={`/author/${props.author.id}`}>
         <FootGroup>
-          <AvatarImage src={imageUrl} />
+          <ArticleAvatarImage imageUrl={imageUrl} />
           <Container>
             <h2>{author.name}</h2>
             <p>{author.bio}</p>

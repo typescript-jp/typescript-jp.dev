@@ -8,12 +8,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   html {
     ${media.lessThan("medium")`
-      background: url(${require("./bg_sp.png")}) no-repeat center 80px;
+      background: url(${require("../images/bg_sp.png")}) no-repeat center 80px;
       background-size: contain;
       background-color: ${({ theme }) => theme.colors.primary};
     `}
     ${media.greaterThan("medium")`
-      background: url(${require("./bg_pc.png")}) no-repeat center 80px;
+      background: url(${require("../images/bg_pc.png")}) no-repeat center 80px;
       background-size: contain;
       background-color: ${({ theme }) => theme.colors.primary};
     `}
@@ -30,9 +30,5 @@ export const GlobalStyle = createGlobalStyle`
   }
   ul li {
     margin-bottom: 0;
-  }
-  p {
-    line-height: 1.8;
-    margin-bottom: 1em;
   }
 `
