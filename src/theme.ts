@@ -7,6 +7,6 @@ export const theme: DefaultTheme = {
     base: "#fff",
     text: "#242424",
     link: "#265988",
-    divider: "#23527c33",
+    divider: "#23527c",
   },
 }
