@@ -39,7 +39,7 @@ export function Footer() {
           Twitter
         </ExternalLink>
         <LinkDivider>/</LinkDivider>
-        <Link to="">Code of Conduct(TBA)</Link>
+        <Link to="coc">Code of Conduct</Link>
       </LinksContainer>
       <CopyrightContainer>
         <Copyright />
