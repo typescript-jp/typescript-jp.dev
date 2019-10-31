@@ -7,6 +7,8 @@ author: sasurau4
 
 # TypeScript Meetup #3 Report
 
+[![Image from Gyazo](https://i.gyazo.com/5b5d4aa3401d545e0db9c9ae491b6a74.jpg)](https://gyazo.com/5b5d4aa3401d545e0db9c9ae491b6a74)
+
 Hi, folks!
 
 We held TypeScript Meetup #3 at Merpay on on October 1st, 2019.
