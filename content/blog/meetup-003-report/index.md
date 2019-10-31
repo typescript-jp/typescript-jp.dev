@@ -1,6 +1,6 @@
 ---
 title: "TypeScript Meetup #3 Report"
-date: "2019-10-21T10:30:00.000+0900"
+date: "2019-10-31T10:30:00.000+0900"
 description: "How excited TypeScript Meetup #3 was."
 author: sasurau4
 ---
