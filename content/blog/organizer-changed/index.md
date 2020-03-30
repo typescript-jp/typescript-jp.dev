@@ -4,7 +4,7 @@ date: "2020-03-29T16:30:00.000+0900"
 author: leko
 ---
 
-TypeScript JP の代表のれこです。これまで TypeScript meetup の主催および TSConf JP 2020 の事務局の代表を勤めていました。  
+TypeScript JP の代表のれこです。これまで TypeScript meetup の主催および TSConf JP 2020 の事務局の代表を務めていました。  
 本記事では一身上の都合により、TypeScript JP の代表を交代することを報告します。
 
 ## 経緯
