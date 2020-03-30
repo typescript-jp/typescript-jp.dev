@@ -25,5 +25,8 @@ TypeScript JP の代表のれこです。これまで TypeScript meetup の主�
 [TSConf US 2019 に行ってきました](https://talks.leko.jp/tsconfus2019/#5)でも書いたように TSConf JP を発足するために一緒にシアトルに行って TSConf US に参加し TSConf US 代表とコミュニケーションしたり、その後ネバダで開催された[React Conf 2019 にひとりで参加](https://sasurau4.hatenablog.com/entry/2019/10/31/074922)してきたり、TypeScript JP 以外にも[Nihonbashi.js](https://nihonbashi-js.connpass.com/)の主催や（コロナにより中止になりましたが）[REACT CONF JAPAN 2020](https://reactconf.jp/2020/)の運営スタッフなども経験しており、コミュニティ活動への熱量もあり代表をお願いするのに最も適切な一人だと思っています。
 
 ## これからの TypeScript JP
-
+初めまして、新しくTypeScript JPの代表を務めさせていただくsasurau4です。
+れこの整備してくれた基盤を引き継ぎ、先達に助けていただきながら日本のTypeScriptコミュニティを盛り上げるお手伝いができたらと思います。
+COVID-19 の影響でTSConf JPはおろか、ミートアップについても非常に難しい情勢ですが、[TypeScript Website v2のローカライズ](https://github.com/microsoft/TypeScript-Website/issues/220)などできることを一つずつやっていきたいと考えております。
+以後、よろしくお願いいたします。
 <!-- @sasurau4 お気持ちを書いてpushお願い -->
