@@ -7,6 +7,9 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
+  "resolutions": {
+    "sharp": "^0.32.5"
+  },
   "dependencies": {
     "gatsby": "^2.19.17",
     "gatsby-image": "^2.2.24",
